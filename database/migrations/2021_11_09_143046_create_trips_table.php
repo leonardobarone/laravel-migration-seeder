@@ -16,15 +16,16 @@ class CreateTripsTable extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             // Luogo di destinazione
-            $table->string('place-destination', 50);
+            $table->string('place_destination', 50);
             // Data di arrivo
-            $table->date('check-in');
+            $table->date('check_in');
             // Data di partenza
-            $table->date('check-out');
+            $table->date('check_out');
             // Numero di persone
             $table->tinyInteger('guests');
-            $table->string('name-host', 50);
-            $table->string('name-structure', 50);
+            $table->string('name_host', 50);
+            $table->string('name_structure', 50);
+            // ->unsigned() => non è possibile inserire numeri negativi
             $table->float('price', 7, 2);
             $table->timestamps();
         });
